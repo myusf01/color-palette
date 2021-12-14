@@ -13,6 +13,5 @@ module.exports = {
   },
   devServer: {
     disableHostCheck: true,
-    proxy: 'https://colormind.io/'
   }
 }
