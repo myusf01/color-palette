@@ -1,5 +1,5 @@
 <template>
-  <div :style="`background-color: ${ColorCode}`">
+  <div class="" :style="`background-color: ${ColorCode}`">
     {{ ColorCode }}
   </div>
 </template>
@@ -12,3 +12,4 @@ export default {
   }
 }
 </script>
+

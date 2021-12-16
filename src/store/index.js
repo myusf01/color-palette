@@ -19,7 +19,7 @@ export default new Vuex.Store({
   actions: {
     async getModel() {
       const modelList = (
-        await fetch('https://colormind.io/list/').then(res => res.json())
+        await fetch('http://colormind.io/list/').then(res => res.json())
       ).result
 
       const randomModel =
@@ -39,7 +39,7 @@ export default new Vuex.Store({
       }
       const model = await this.dispatch('getModel')
       const getColors = (
-        await fetch('https://colormind.io/api/', {
+        await fetch('http://colormind.io/api/', {
           method: 'POST',
           body: JSON.stringify({
             model
