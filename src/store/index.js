@@ -34,7 +34,7 @@ export default new Vuex.Store({
         const g = colorArray[1]
         const b = colorArray[2]
         return (
-          '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+          '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()
         )
       }
       const model = await this.dispatch('getModel')

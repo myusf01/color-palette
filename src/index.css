@@ -5,14 +5,12 @@
 @layer components {
   .container-small {
     @apply flex flex-col 
-        justify-center
         min-w-full 
         min-h-screen;
   }
   .container-large {
     @apply flex
         flex-row
-        justify-center
         min-h-screen
         min-w-full;
   }
@@ -23,6 +21,39 @@
     @apply max-h-full
         max-w-full
         w-screen
-        h-screen;
+        h-screen
+        flex
+        justify-between
+        flex-col;
+  }
+  .card-text {
+    @apply block text-xl;
+  }
+  .text-card {
+    @apply flex
+    justify-center
+    mx-auto
+    mb-auto
+    w-36
+    h-10
+    rounded-b-xl
+    bg-opacity-25
+    bg-gray-100;
+  }
+  .alert-card {
+    @apply
+    mb-auto
+    mx-auto
+    w-32
+    h-20
+    flex
+    justify-center
+    rounded-xl
+    bg-gray-200
+    bg-opacity-25
+    transition
+    duration-1000
+    ease-in-out
+
   }
 }

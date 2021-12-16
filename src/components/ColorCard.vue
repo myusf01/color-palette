@@ -6,31 +6,32 @@
     class="card-col md:card-row"
     :style="`background-color: ${ColorCode}`"
   >
+    <ColorText :ColorCode="ColorCode" />
     <transition name="alertFade">
-      <CopyAlert :ColorCode="ColorCode" v-if="show"/>
+      <CopyAlert :ColorCode="ColorCode" v-if="show" />
     </transition>
-    {{ ColorCode }}
   </div>
 </template>
 
 <script>
 import CopyAlert from '../components/CopyAlert.vue'
+import ColorText from './ColorText.vue'
 export default {
   name: 'ColorCard',
   data() {
     return {
-      show: false
+      show: false,
     }
   },
   props: {
     ColorCode: {}
   },
   components: {
+    ColorText,
     CopyAlert
   },
   methods: {
     onCopy: function() {
-      console.log(this.show)
       this.show = !this.show
     }
   }
