@@ -1,5 +1,5 @@
 <template>
-  <div class="" :style="`background-color: ${ColorCode}`">
+  <div class="card-col md:card-row" :style="`background-color: ${ColorCode}`">
     {{ ColorCode }}
   </div>
 </template>
@@ -12,4 +12,3 @@ export default {
   }
 }
 </script>
-

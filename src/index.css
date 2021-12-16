@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .container-small {
+    @apply flex flex-col 
+        justify-center
+        min-w-full 
+        min-h-screen;
+  }
+  .container-large {
+    @apply flex
+        flex-row
+        justify-center
+        min-h-screen
+        min-w-full;
+  }
+  .card-col {
+    @apply h-[20vh];
+  }
+  .card-row {
+    @apply max-h-full
+        max-w-full
+        w-screen
+        h-screen;
+  }
+}

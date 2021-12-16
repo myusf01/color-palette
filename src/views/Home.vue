@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center">
+  <div class="container-small md:container-large">
     <div v-if="allColors.length <= 0">
       "Loading Colors..."
     </div>
