@@ -15,7 +15,9 @@
         min-w-full;
   }
   .card-col {
-    @apply h-[20vh];
+    @apply h-[20vh]
+      flex
+      flex-col;
   }
   .card-row {
     @apply max-h-full
@@ -40,9 +42,8 @@
     bg-opacity-25
     bg-gray-100;
   }
-  .alert-card {
-    @apply
-    mb-auto
+  .alert-card-md {
+    @apply mb-auto
     mx-auto
     w-32
     h-20
@@ -50,10 +51,17 @@
     justify-center
     rounded-xl
     bg-gray-200
-    bg-opacity-25
-    transition
-    duration-1000
-    ease-in-out
-
+    bg-opacity-25;
+  }
+  .alert-card {
+    @apply mx-auto
+    mb-auto
+    w-32
+    h-14
+    flex
+    justify-center
+    rounded-xl
+    bg-gray-200
+    bg-opacity-25;
   }
 }

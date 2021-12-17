@@ -1,13 +1,12 @@
 <template>
   <div
-    @click="show = !show"
+    @click="onCopy"
     v-clipboard:copy="ColorCode"
-    v-clipboard:success="onCopy"
     class="card-col md:card-row"
     :style="`background-color: ${ColorCode}`"
   >
     <ColorText :ColorCode="ColorCode" />
-    <transition name="alertFade">
+    <transition name="fade" v-on:enter="enter">
       <CopyAlert :ColorCode="ColorCode" v-if="show" />
     </transition>
   </div>
@@ -20,7 +19,7 @@ export default {
   name: 'ColorCard',
   data() {
     return {
-      show: false,
+      show: false
     }
   },
   props: {
@@ -33,7 +32,24 @@ export default {
   methods: {
     onCopy: function() {
       this.show = !this.show
+    },
+    enter: function() {
+      // let that = this
+      // this.show = true
+      setTimeout(() => {
+        this.show = false
+      }, 1000)
     }
   }
 }
 </script>
+<style lang="postcss" scoped>
+.fade-leave-active,
+.fade-enter-active {
+  @apply duration-500 transition-opacity;
+}
+.fade-enter,
+.fade-leave-to {
+  @apply opacity-0;
+}
+</style>

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import  getColors  from "../api/ApiHandler";
-import 'isomorphic-fetch'
 
 Vue.use(Vuex)
 

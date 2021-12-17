@@ -1,5 +1,5 @@
 <template>
-  <div class="alert-card">
+  <div class="alert-card md:alert-card-md">
     <span class="my-auto card-text">
       Copied!
     </span>

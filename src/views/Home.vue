@@ -3,14 +3,7 @@
     <div v-if="allColors.length <= 0">
       "Loading Colors..."
     </div>
-    <ColorCard
-      @mouseover.native="hover = !hover"
-      @mouseleave="hover = !hover"
-      v-else
-      v-for="col in allColors"
-      :key="col"
-      :ColorCode="col"
-    />
+    <ColorCard v-else v-for="col in allColors" :key="col" :ColorCode="col" />
   </div>
 </template>
 
@@ -20,11 +13,6 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
-  data() {
-    return {
-      hover: false
-    }
-  },
   components: {
     ColorCard
   },
