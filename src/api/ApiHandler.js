@@ -1,22 +1,42 @@
-import axios from 'axios'
 import 'isomorphic-fetch'
-function randomize(array) {
-  return array[Math.floor(Math.random() * (array.length - 1))]
-}
+
 async function getModel() {
-  const res = (await axios.get('http://colormind.io/list/')).data
-  return randomize(res.result)
+  const modelList = (
+    await fetch('http://colormind.io/list/').then(res => res.json())
+  ).result
+
+  const randomModel =
+    modelList[Math.floor(Math.random() * (modelList.length - 1))]
+  return randomModel
 }
 
-export default async function getColor() {
+export default async function getColors() {
+  function convertRGBtoHEX(colorArray) {
+    // const [r,g,b] = colorArray
+    // console.log(colorArray);
+    const r = colorArray[0]
+    const g = colorArray[1]
+    const b = colorArray[2]
+    return (
+      '#' +
+      ((1 << 24) + (r << 16) + (g << 8) + b)
+        .toString(16)
+        .slice(1)
+        .toUpperCase()
+    )
+  }
   const model = await getModel()
-  const res = await fetch('http://colormind.io/api/', {
-    method: 'POST',
-    body: JSON.stringify({
-      model
-    })
+  const getColors = (
+    await fetch('http://colormind.io/api/', {
+      method: 'POST',
+      body: JSON.stringify({
+        model
+      })
+    }).then(res => res.json())
+  ).result
+
+  const result = getColors.map(array => {
+    return convertRGBtoHEX(array)
   })
-    .then(res => res.json())
-  console.log(res);
-  return res
+  return result
 }
