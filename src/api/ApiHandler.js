@@ -1,6 +1,6 @@
 import 'isomorphic-fetch'
 
-async function getModel() {
+export async function getModel() {
   const modelList = (
     await fetch('https://cors-everywhere.herokuapp.com/http://colormind.io/list/').then(res => res.json())
   ).result
