@@ -4,11 +4,12 @@
     <div v-else class="container">
       <router-view />
       <div class="navbar md:navbar-md" id="nav">
-        <!-- <div class="color-generator" @click="getPalette">Generate Colors</div> -->
+        <button v-clipboard:copy="allColors">Copy All Colors</button>
         <button @click="getPalette">Generate Colors</button>
-        <label for="model">Choose a model</label>
         <select name="model">
-          <option v-for="model in allModels" :key="model">{{ model }}</option>
+          <option v-for="model in allModels" :key="model">{{
+            model.split('_').join(' ')
+          }}</option>
         </select>
       </div>
     </div>
@@ -29,6 +30,7 @@ export default {
   },
   created() {
     this.getPalette()
+    this.getModels()
   }
 }
 </script>

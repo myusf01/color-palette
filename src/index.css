@@ -87,7 +87,8 @@
   }
   .navbar {
     @apply flex
-    justify-center
+    justify-evenly
+    items-center
     w-full
     h-[5vh]
     bg-white

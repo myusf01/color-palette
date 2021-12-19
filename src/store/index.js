@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import getColors from '../api/ApiHandler'
-import getModel from '../api/ApiHandler'
+import { getColors, getAllModels } from '../api/ApiHandler'
 
 Vue.use(Vuex)
 
@@ -19,7 +18,7 @@ export default new Vuex.Store({
       state.palette = data
     },
     SET_MODEL: (state, data) => {
-      state.palette = data
+      state.models = data
     }
   },
   actions: {
@@ -28,9 +27,8 @@ export default new Vuex.Store({
       commit('SET_PALETTE', getColor)
     },
     async getModels({ commit }) {
-      const allModels = await getModel()
-      console.log(allModels)
-      commit('SET_MODEL',allModels)
+      const allModels = await getAllModels()
+      commit('SET_MODEL', allModels)
     }
   },
   modules: {}
