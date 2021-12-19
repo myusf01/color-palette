@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import CopyAlert from '../components/CopyAlert.vue'
+import CopyAlert from './CopyAlert.vue'
 import ColorText from './ColorText.vue'
 export default {
   name: 'ColorCard',

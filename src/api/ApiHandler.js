@@ -12,8 +12,7 @@ async function getModel() {
 
 export default async function getColors() {
   function convertRGBtoHEX(colorArray) {
-    // const [r,g,b] = colorArray
-    // console.log(colorArray);
+
     const r = colorArray[0]
     const g = colorArray[1]
     const b = colorArray[2]
