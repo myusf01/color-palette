@@ -2,7 +2,7 @@ import 'isomorphic-fetch'
 
 async function getModel() {
   const modelList = (
-    await fetch('http://colormind.io/list/').then(res => res.json())
+    await fetch('https://cors-everywhere.herokuapp.com/http://colormind.io/list/').then(res => res.json())
   ).result
 
   const randomModel =
@@ -26,7 +26,7 @@ export default async function getColors() {
   }
   const model = await getModel()
   const getColors = (
-    await fetch('http://colormind.io/api/', {
+    await fetch('https://cors-everywhere.herokuapp.com/http://colormind.io/api/', {
       method: 'POST',
       body: JSON.stringify({
         model
