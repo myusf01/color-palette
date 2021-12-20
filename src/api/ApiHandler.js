@@ -13,7 +13,7 @@ export async function getRandomModel() {
   const randomModel = models[Math.floor(Math.random() * (models.length - 1))]
   return randomModel
 }
-export async function getColors() {
+export async function getColors(setModel) {
   function convertRGBtoHEX(colorArray) {
     const r = colorArray[0]
     const g = colorArray[1]
@@ -26,14 +26,17 @@ export async function getColors() {
         .toUpperCase()
     )
   }
-  const randomModel = await getRandomModel()
+  let model = setModel
+  if (!model) {
+    model = await getRandomModel()
+  }
   const getColors = (
     await fetch(
       'https://cors-everywhere.herokuapp.com/http://colormind.io/api/',
       {
         method: 'POST',
         body: JSON.stringify({
-          model: randomModel
+          model
         })
       }
     ).then(res => res.json())

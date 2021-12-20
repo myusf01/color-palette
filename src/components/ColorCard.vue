@@ -2,7 +2,7 @@
   <div
     @click="onCopy"
     v-clipboard:copy="ColorCode"
-    class="card-col md:card-row"
+    class="color-card md:color-card-md"
     :style="`background-color: ${ColorCode}`"
   >
     <ColorText :ColorCode="ColorCode" />
