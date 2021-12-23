@@ -10,7 +10,10 @@
       Generate Colors
     </button>
     <div class="relative">
-      <button @click.stop="isShow = !isShow" class="button md:button-md button-indigo">
+      <button
+        @click.stop="isShow = !isShow"
+        class="button md:button-md button-indigo"
+      >
         Select Model
       </button>
       <DropdownMenu
@@ -27,21 +30,21 @@
         "
       />
     </div>
-    <!-- <select name="model" @change="selectModel" v-model="selected">
-      <option v-for="model in allModels" :key="model" v-bind:value="model">
-        {{ model.split('_').join(' ') }}
-      </option>
-    </select> -->
+    <a href="https://github.com/myusf01">
+      <GithubIcon width="30" heigth="30" class="mr-2"
+    /></a>
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import DropdownMenu from './DropdownMenu.vue'
+import GithubIcon from '../assets/github.svg'
 export default {
   name: 'Navbar',
   components: {
-    DropdownMenu
+    DropdownMenu,
+    GithubIcon
   },
   data() {
     return {
