@@ -1,9 +1,13 @@
 <template>
   <div ref="dropdown" class="dropdown-card">
-    <span v-for="item in menuArray" :key="item" @click="$emit('change', item)" class="dropdown-item">
+    <span
+      v-for="item in menuArray"
+      :key="item"
+      @click="$emit('change', item)"
+      class="dropdown-item"
+    >
       {{ item.split('_').join(' ') }}</span
     >
-    <br>
   </div>
 </template>
 
@@ -26,6 +30,7 @@ export default {
       try {
         let el = this.$refs.dropdown
         let target = e.target
+
         if (el !== target && !el.contains(target)) {
           this.$emit('close')
         }

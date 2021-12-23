@@ -40,12 +40,16 @@
         h-full
         justify-between;
   }
+  .color-card:hover{
+    @apply brightness-95
+  }
   .load-card {
     @apply flex
     items-center
     space-x-3
     m-auto
     text-center
+    text-gray-600
     w-auto
     h-auto;
   }
@@ -58,7 +62,7 @@
     rounded-full;
   }
   .card-text {
-    @apply block text-xl my-auto;
+    @apply block text-xl my-auto ;
   }
   .text-card {
     @apply flex
@@ -106,7 +110,7 @@
     w-auto
     min-w-[100px]
     min-h-[124px]
-      bottom-14
+      bottom-[4.5rem]
       right-0
       overflow-y-auto
       bg-white
@@ -117,13 +121,14 @@
   .dropdown-item {
     @apply block
     h-auto
-    w-auto
     rounded-lg
+    text-gray-800
     px-2
     cursor-pointer;
   }
   .dropdown-item:hover {
-    @apply bg-gray-300;
+    @apply bg-gray-300
+    bg-opacity-30;
   }
   .button {
     @apply m-2

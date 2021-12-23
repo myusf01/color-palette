@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar md:navbar-md" id="nav">
+  <div class="navbar md:navbar-md z-50" id="nav">
     <button
       v-clipboard:copy="allColors"
       class="button button-indigo md:button-md"
@@ -10,7 +10,9 @@
       Generate Colors
     </button>
     <div class="relative">
-      <button @click.stop="isShow = !isShow" class="button button-indigo">Show</button>
+      <button @click.stop="isShow = !isShow" class="button md:button-md button-indigo">
+        Select Model
+      </button>
       <DropdownMenu
         v-if="isShow"
         v-model="selected"
@@ -18,8 +20,9 @@
         @close="isShow = false"
         @change="
           e => {
+            selected = e
             isShow = false
-            selectModel(e)
+            selectModel(selected)
           }
         "
       />
@@ -42,8 +45,8 @@ export default {
   },
   data() {
     return {
-      selected: 'default',
-      isShow: true
+      selected: null,
+      isShow: false
     }
   },
   computed: {

@@ -7,7 +7,7 @@
   >
     <ColorText :ColorCode="ColorCode" />
     <transition name="fade" v-on:enter="enter">
-      <CopyAlert :ColorCode="ColorCode" v-if="show" />
+      <CopyAlert v-if="show" />
     </transition>
   </div>
 </template>

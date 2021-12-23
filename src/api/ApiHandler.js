@@ -31,7 +31,6 @@ export async function getColors(setModel) {
   if (!model) {
     model = await getRandomModel()
   }
-  console.log(model)
   const getColors = (
     await fetch(
       'https://cors-everywhere.herokuapp.com/http://colormind.io/api/',
