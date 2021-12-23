@@ -1,18 +1,20 @@
 import 'isomorphic-fetch'
 
-async function getModel() {
+export async function getAllModels() {
   const modelList = (
-    await fetch('https://cors-everywhere.herokuapp.com/http://colormind.io/list/').then(res => res.json())
+    await fetch(
+      'https://cors-everywhere.herokuapp.com/http://colormind.io/list/'
+    ).then(res => res.json())
   ).result
-
-  const randomModel =
-    modelList[Math.floor(Math.random() * (modelList.length - 1))]
+  return modelList
+}
+export async function getRandomModel() {
+  const models = await getAllModels()
+  const randomModel = models[Math.floor(Math.random() * (models.length - 1))]
   return randomModel
 }
-
-export default async function getColors() {
+export async function getColors(setModel) {
   function convertRGBtoHEX(colorArray) {
-
     const r = colorArray[0]
     const g = colorArray[1]
     const b = colorArray[2]
@@ -24,14 +26,21 @@ export default async function getColors() {
         .toUpperCase()
     )
   }
-  const model = await getModel()
+
+  let model = setModel
+  if (!model) {
+    model = await getRandomModel()
+  }
   const getColors = (
-    await fetch('https://cors-everywhere.herokuapp.com/http://colormind.io/api/', {
-      method: 'POST',
-      body: JSON.stringify({
-        model
-      })
-    }).then(res => res.json())
+    await fetch(
+      'https://cors-everywhere.herokuapp.com/http://colormind.io/api/',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          model
+        })
+      }
+    ).then(res => res.json())
   ).result
 
   const result = getColors.map(array => {

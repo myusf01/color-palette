@@ -1,5 +1,5 @@
 <template>
-  <div class="text-card ">
+  <div class="text-card">
     <div class="card-text">
       {{ ColorCode }}
     </div>

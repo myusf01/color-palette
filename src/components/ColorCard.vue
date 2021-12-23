@@ -2,12 +2,12 @@
   <div
     @click="onCopy"
     v-clipboard:copy="ColorCode"
-    class="card-col md:card-row"
+    class="color-card md:color-card-md"
     :style="`background-color: ${ColorCode}`"
   >
     <ColorText :ColorCode="ColorCode" />
     <transition name="fade" v-on:enter="enter">
-      <CopyAlert :ColorCode="ColorCode" v-if="show" />
+      <CopyAlert v-if="show" />
     </transition>
   </div>
 </template>

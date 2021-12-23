@@ -38,6 +38,7 @@
     "postcss-loader": "^6.2.1",
     "postcss-nested": "^5.0.6",
     "prettier": "^2.2.1",
+    "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
