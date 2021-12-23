@@ -1,7 +1,7 @@
 <template>
-  <div id="app" class="container antialiased">
+  <div id="app" class="container-app">
     <loading-text v-if="allColors.length <= 0" />
-    <div v-else class="container">
+    <div v-else class="flex min-w-full min-h-full">
       <Navbar />
       <router-view />
     </div>
