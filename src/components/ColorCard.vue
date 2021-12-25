@@ -1,11 +1,13 @@
 <template>
+  <!-- color card to show and copy colors on click -->
   <div
-    @click="onCopy"
+    @click="show = !show"
     v-clipboard:copy="ColorCode"
-    class="card-col md:card-row"
-    :style="`background-color: ${ColorCode}`"
+    class="color-card md:color-card-md"
+    :style="`background-color: ${ColorCode}`" 
   >
     <ColorText :ColorCode="ColorCode" />
+    <!-- show copy message on click -->
     <transition name="fade" v-on:enter="enter">
       <CopyAlert :ColorCode="ColorCode" v-if="show" />
     </transition>
@@ -19,10 +21,12 @@ export default {
   name: 'ColorCard',
   data() {
     return {
+      // data to control show/hide copy message
       show: false
     }
   },
   props: {
+    // property to get color from main component
     ColorCode: {}
   },
   components: {
@@ -30,12 +34,8 @@ export default {
     CopyAlert
   },
   methods: {
-    onCopy: function() {
-      this.show = !this.show
-    },
     enter: function() {
-      // let that = this
-      // this.show = true
+      // set timeout to manage how long the message will be on screen
       setTimeout(() => {
         this.show = false
       }, 1000)

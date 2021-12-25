@@ -6,7 +6,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    palette: []
+    // states to store data comes from api
+    palette: [],
+    models: [],
+    activeModel: null
   },
   getters: {
     allColors: state => state.palette
@@ -17,9 +20,19 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    // fetch data from api according model and mutate to state
     async getPalette({ commit }) {
       const getColor = await getColors()
       commit('SET_PALETTE', getColor)
+    },
+    //  fetch all model list that can be used 
+    async getModels({ commit }) {
+      const allModels = await getColors()
+      commit('SET_MODEL', allModels)
+    },
+    // set active model to generate colors from same model
+    setModel({ commit }, data) {
+      commit('SET_ACTIVE_MODEL', data)
     }
   },
   modules: {}

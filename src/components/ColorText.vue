@@ -1,5 +1,6 @@
 <template>
-  <div class="text-card ">
+  <div class="text-card">
+    <!-- text box to show color code above the card -->
     <div class="card-text">
       {{ ColorCode }}
     </div>

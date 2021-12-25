@@ -1,6 +1,7 @@
 <template>
-  <div class="alert-card md:alert-card-md">
-    <span class="my-auto card-text">
+  <div class="text-card alert-card md:alert-card-md">
+    <!-- text box contains copied text. -->
+    <span class="card-text">
       Copied!
     </span>
   </div>
