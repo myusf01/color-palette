@@ -18,7 +18,7 @@ export async function getRandomModel() {
   return randomModel
 }
 
-export default async function getColors(setModel) {
+export async function getColors(setModel) {
   function convertRGBtoHEX(colorArray) {
     // Colors that came from api are RGB formatted.
     // we want to use HEX format, to convert RGB => HEX
