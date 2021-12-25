@@ -9,9 +9,6 @@
 
 <script>
 export default {
-  name: 'CopyAlert',
-  props: {
-    ColorCode: {}
-  }
+  name: 'CopyAlert'
 }
 </script>
