@@ -94,8 +94,9 @@
     @apply bottom-0
     fixed
     flex
-    justify-evenly
+    justify-between
     items-center
+    px-5
     my-auto
     h-[10%]
     w-full
