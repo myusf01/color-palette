@@ -1,5 +1,6 @@
 {
   "name": "color-palette",
+  "homepage": "https://color-palette.vercel.app/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
