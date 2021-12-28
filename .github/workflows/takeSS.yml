@@ -1,0 +1,18 @@
+name: generate new demo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: dispatch generator
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: generator
+          repo: myusf01/ss-pipe
+          token: ${{ secrets.FLOW_TOKEN }}
+          inputs: '{ "repo": "${{ github.repository }}" }'
