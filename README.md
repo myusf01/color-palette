@@ -9,7 +9,7 @@ Built with `Vue JS`
 
 ## Screenshots
 
-![image](public/page-ss.png)
+![image](https://mysf-sspipe.s3.eu-central-1.amazonaws.com/color-palette.png)
 
 ## Installation
 
