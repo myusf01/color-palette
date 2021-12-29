@@ -1,11 +1,11 @@
-name: generate new demo
+name: Generate Screenshot
 
 on:
   push:
     branches: [main]
 
 jobs:
-  demo:
+  generate-screenshot:
     runs-on: ubuntu-latest
 
     steps:
