@@ -12,7 +12,7 @@ jobs:
       - name: dispatch generator
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: screenshot-generator
+          workflow: generator
           repo: myusf01/ss-pipe
           token: ${{ secrets.FLOW_TOKEN }}
           inputs: '{ "repo": "${{ github.repository }}" }'
