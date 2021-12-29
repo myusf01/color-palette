@@ -1,3 +1,5 @@
+[![Generate Screenshot](https://github.com/myusf01/color-palette/actions/workflows/takeSS.yml/badge.svg?branch=main)](https://github.com/myusf01/color-palette/actions/workflows/takeSS.yml)
+
 # DevProjects - Build a screenshot pipeline
 
 This is an open source project from [DevProjects](http://www.codementor.io/projects).
@@ -9,7 +11,7 @@ Built with `Vue JS`
 
 ## Screenshots
 
-![image](https://mysf-sspipe.s3.eu-central-1.amazonaws.com/color-palette.png)
+![App](https://mysf-sspipe.s3.eu-central-1.amazonaws.com/color-palette.png)
 
 ## Installation
 
