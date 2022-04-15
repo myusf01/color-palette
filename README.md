@@ -11,7 +11,7 @@ Built with `Vue JS`
 
 ## Screenshots
 
-![App](https://mysf-sspipe.s3.eu-central-1.amazonaws.com/color-palette.gif)
+![App](https://mysf-sspipe.s3.eu-central-1.amazonaws.com/color-palette-banner.png)
 
 ## Installation
 
