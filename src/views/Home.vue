@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col content-start w-full md:card-container">
+  <div class="card-container-sm md:card-container-md">
     <ColorCard v-for="col in allColors" :key="col" :ColorCode="col" />
   </div>
 </template>

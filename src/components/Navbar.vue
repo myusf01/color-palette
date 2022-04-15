@@ -2,7 +2,6 @@
   <div class="navbar md:navbar-md z-50" id="nav">
     <!-- button to copy all colors from palette -->
     <button
-    
       v-clipboard:copy="allColors"
       class="button button-indigo md:button-md"
     >
@@ -28,7 +27,7 @@
         :menuList="allModels"
         @close="isShow = false"
         @change="
-          e => {
+          (e) => {
             selected = e
             isShow = false
             selectModel(selected)
@@ -38,7 +37,7 @@
     </div>
     <!-- my personal github account -->
     <a href="https://github.com/myusf01">
-      <GithubIcon width="30" heigth="30" class="mr-2"
+      <GithubIcon width="30" height="30" class="mr-2"
     /></a>
   </div>
 </template>

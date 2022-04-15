@@ -9,12 +9,14 @@
   }
 }
 @layer components {
-  .card-container {
-    @apply flex-row h-[90%] w-full;
+  .card-container-md {
+    @apply flex-row h-[90%];
+  }
+  .card-container-sm {
+    @apply flex flex-col content-start w-full;
   }
   .container-app {
-    @apply antialiased
-    min-w-full
+    @apply min-w-full
     max-h-full
     w-full
     h-screen

@@ -18,24 +18,27 @@ export async function getRandomModel() {
   return randomModel
 }
 
-export async function getColors(setModel) {
-  function convertRGBtoHEX(colorArray) {
-    // Colors that came from api are RGB formatted.
-    // we want to use HEX format, to convert RGB => HEX
-    // I'm using this solution from StackOverflow
-    // https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+function convertRGBtoHEX(colorArray) {
+  // Colors that came from api are RGB formatted.
+  // we want to use HEX format, to convert RGB => HEX
+  // I'm using this solution from StackOverflow
+  // https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+  const [r,g,b] = colorArray
 
-    const r = colorArray[0]
-    const g = colorArray[1]
-    const b = colorArray[2]
-    return (
-      '#' +
-      ((1 << 24) + (r << 16) + (g << 8) + b)
-        .toString(16)
-        .slice(1)
-        .toUpperCase()
-    )
-  }
+  // r = colorArray[0]
+  // g = colorArray[1]
+  // b = colorArray[2]
+  
+  return (
+    '#' +
+    ((1 << 24) + (r << 16) + (g << 8) + b)
+      .toString(16)
+      .slice(1)
+      .toUpperCase()
+  )
+}
+
+export async function getColors(setModel) {
   // set model that we want to fetch from api
   let model = setModel
   // if user doesn't set the model we will select random model from list.
