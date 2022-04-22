@@ -35,22 +35,17 @@
         "
       />
     </div>
-    <!-- my personal github account -->
-    <a href="https://github.com/myusf01">
-      <GithubIcon width="30" height="30" class="mr-2"
-    /></a>
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import DropdownMenu from './DropdownMenu.vue'
-import GithubIcon from '../assets/github.svg'
+
 export default {
   name: 'Navbar',
   components: {
-    DropdownMenu,
-    GithubIcon
+    DropdownMenu
   },
   data() {
     return {
