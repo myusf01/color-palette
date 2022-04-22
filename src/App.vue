@@ -5,7 +5,23 @@
     <!-- main content -->
     <div v-else class="flex min-w-full min-h-full">
       <!-- navigaton bar -->
-      <Navbar />
+      <Navbar
+        @copyAlert="
+          (e) => {
+            this.show = e
+          }
+        "
+      />
+      <CopyAlertVue
+        class="absolute-center z-50 w-64 h-44"
+        alertMessage="✔ Copied All Colors!"
+        :triggerAlert="show"
+        @hideAlert="
+          (e) => {
+            this.show = e
+          }
+        "
+      />
       <!-- page -->
       <router-view />
     </div>
@@ -15,10 +31,18 @@
 import LoadingText from './components/LoadingText.vue'
 import { mapActions, mapGetters } from 'vuex'
 import Navbar from './components/Navbar.vue'
+import CopyAlertVue from './components/CopyAlert.vue'
 export default {
   components: {
     Navbar,
-    LoadingText
+    LoadingText,
+    CopyAlertVue
+  },
+  data() {
+    return {
+      // data to control show/hide copy message
+      show: false
+    }
   },
   computed: {
     // get all colors come from api
@@ -26,7 +50,10 @@ export default {
   },
   methods: {
     // method to fetch palette
-    ...mapActions(['getPalette'])
+    ...mapActions(['getPalette']),
+    log(e) {
+      console.log(e)
+    }
   },
   created() {
     // function to fetch colors from api when page is created.

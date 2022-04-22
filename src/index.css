@@ -9,6 +9,13 @@
   }
 }
 @layer components {
+  .absolute-center {
+    @apply absolute
+    top-[50%]
+    left-[50%]
+    translate-x-[-50%]
+    translate-y-[-50%];
+  }
   .card-container-md {
     @apply flex-row h-[90%];
   }
@@ -87,8 +94,7 @@
     h-14
     rounded-xl
     text-white
-    bg-gray-300
-    bg-opacity-30;
+    bg-green-400/60;
   }
   .navbar-md {
   }

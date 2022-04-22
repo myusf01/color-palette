@@ -3,6 +3,7 @@
     <!-- button to copy all colors from palette -->
     <button
       v-clipboard:copy="allColors"
+      @click="$emit('copyAlert', true)"
       class="button button-indigo md:button-md"
     >
       Copy All
