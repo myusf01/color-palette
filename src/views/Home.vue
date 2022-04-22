@@ -5,7 +5,10 @@
       class="absolute top-[50%] right-1 bg-white rounded-xl shadow-xl hover:brightness-95"
       href="https://github.com/myusf01"
     >
-      <GithubIcon width="30" height="30" class="mx-2 my-2 drop-shadow-lg"
+      <GithubIcon
+        width="30"
+        height="30"
+        class="mx-2 my-2 drop-shadow-lg animate-pulse-slow"
     /></a>
   </div>
 </template>

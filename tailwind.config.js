@@ -5,7 +5,11 @@ module.exports = {
     fontFamily: {
       sans: ['Readex Pro', 'ui-sans-serif', 'system-ui']
     },
-    extend: {}
+    extend: {
+      animation: {
+        'pulse-slow': 'pulse 4s cubic-bezier(.46,.03,.52,.96) infinite'
+      }
+    }
   },
   plugins: []
 }
