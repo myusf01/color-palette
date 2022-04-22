@@ -4,13 +4,19 @@
     @click="show = !show"
     v-clipboard:copy="ColorCode"
     class="color-card md:color-card-md"
-    :style="`background-color: ${ColorCode}`" 
+    :style="`background-color: ${ColorCode}`"
   >
     <ColorText :ColorCode="ColorCode" />
     <!-- show copy message on click -->
-    <transition name="fade" v-on:enter="enter">
-      <CopyAlert v-if="show" />
-    </transition>
+    <CopyAlert
+      alertMessage="✔ Copy!"
+      :triggerAlert="show"
+      @hideAlert="
+        (e) => {
+          this.show = e
+        }
+      "
+    />
   </div>
 </template>
 
@@ -32,24 +38,6 @@ export default {
   components: {
     ColorText,
     CopyAlert
-  },
-  methods: {
-    enter: function() {
-      // set timeout to manage how long the message will be on screen
-      setTimeout(() => {
-        this.show = false
-      }, 1000)
-    }
   }
 }
 </script>
-<style lang="postcss" scoped>
-.fade-leave-active,
-.fade-enter-active {
-  @apply duration-500 transition-opacity;
-}
-.fade-enter,
-.fade-leave-to {
-  @apply opacity-0;
-}
-</style>
